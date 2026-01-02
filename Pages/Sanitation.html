@@ -341,5 +341,22 @@ if (sliderItems.length > 0) {
 }
 
 </script>
+
+<!--JS for navigation debugging on tall devices -->
+<script>
+function updateHeaderOffset() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  const headerHeight = header.offsetHeight;
+  document.documentElement.style.setProperty(
+    '--header-offset',
+    headerHeight + 'px'
+  );
+}
+
+window.addEventListener('load', updateHeaderOffset);
+window.addEventListener('resize', updateHeaderOffset);
+</script>
 </body>
 </html>

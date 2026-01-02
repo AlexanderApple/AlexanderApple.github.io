@@ -35,7 +35,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 2vh 5vw;
+  padding: 4vh 5vw;
   color: white;
   gap: 8vw;
   border-bottom: 0.6vh solid white;
@@ -608,7 +608,9 @@ button:hover {
     gap: 2vh;                /* FIX: override 8vw */
     padding: 2vh 2vw;
   }
-
+.hero-content {
+  top: calc(var(--header-offset) + 1.5rem);
+}
   /* Logo centered */
   .logo {
     display: block;
