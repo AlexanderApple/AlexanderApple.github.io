@@ -674,10 +674,9 @@ button:hover {
   }
 
   .slider-dots button {
-    width: 0.3em;
-    height: 0.3em;
+    width: 0.1em;
+    height: 0.1em;
   }
-
   /* Footer adjustments */
   .footer-links {
     gap: 0.6rem;

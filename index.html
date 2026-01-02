@@ -561,6 +561,30 @@ function updateHeaderOffset() {
 window.addEventListener('load', updateHeaderOffset);
 window.addEventListener('resize', updateHeaderOffset);
 </script>
+<script>
+// Smooth scroll accounting for fixed header
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href').substring(1);
+    const targetEl = document.getElementById(targetId);
+
+    if (targetEl) {
+      e.preventDefault();
+      const header = document.querySelector('.header');
+      const headerHeight = header ? header.offsetHeight : 0;
+
+      const elementTop = targetEl.getBoundingClientRect().top + window.scrollY;
+      const scrollToPosition = elementTop - headerHeight - 10; // 10px extra spacing
+
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+</script>
+
 </body>
 </html>
 
