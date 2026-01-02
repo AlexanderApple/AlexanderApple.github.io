@@ -730,7 +730,9 @@ button:hover {
     max-width: 140px; /* smaller than tablet */
     height: auto;
   }
-
+.header{
+  padding: 1vh 0vw;
+}
   /* Stack container-layout sections */
   .container-layout {
     flex-direction: column;
@@ -816,5 +818,6 @@ button:hover {
   #quote .quote-selection button {
     width: 100%;        
   }
+
 
 }
