@@ -608,9 +608,7 @@ button:hover {
     gap: 2vh;                /* FIX: override 8vw */
     padding: 2vh 2vw;
   }
-.hero-content {
-  top: calc(var(--header-offset) + 1.5rem);
-}
+
   /* Logo centered */
   .logo {
     display: block;
@@ -644,7 +642,7 @@ button:hover {
 
   /* Hero adjustments */
   .hero-content {
-    top: 28vh;
+    top: calc(var(--header-offset) + 1.5rem);
     color: rgb(255, 255, 255);
     white-space: normal;
     z-index: 1;
