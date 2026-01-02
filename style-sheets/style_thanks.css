@@ -1,0 +1,85 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+body {
+  background-color: rgb(10, 31, 68); 
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card Container */
+.thanks-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 5vh 5vw;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  width: 90%;
+  max-width: 500px;
+
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0; /* start invisible */
+  transform: translateY(20px); /* start slightly down */
+}
+
+
+/* Title */
+.thanks-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1vh;
+}
+
+/* Paragraphs */
+.thanks-container p {
+  font-size: 1.1rem;
+  margin: 1vh 0;
+}
+
+/* Button */
+.back-btn {
+  display: inline-block;
+  margin-top: 3vh;
+  padding: 1rem 2rem;
+  background-color: white;
+  color: rgb(10, 31, 68);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: rgb(230, 230, 230);
+  transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .thanks-container h1 {
+    font-size: 2rem;
+  }
+
+  .thanks-container p {
+    font-size: 1rem;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

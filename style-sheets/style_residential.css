@@ -1,0 +1,105 @@
+/* ===============================
+   Import index styles
+=============================== */
+@import url("../style-sheets/style_index.css");
+
+/* ===============================
+   Residential Page Custom Styles
+=============================== */
+/*/hero Image */
+.hero-image {
+
+  background-image: url("../Images/residential-hero.webp");
+
+}
+
+
+.service-table-wrapper {
+  overflow-x: auto;
+}
+
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2vh;
+}
+
+.service-table th,
+.service-table td {
+  border: 1px solid rgb(200, 200, 200);
+  padding: 1em;
+  text-align: left;
+  vertical-align: top;
+}
+
+.service-table th {
+  background-color: rgb(10, 31, 68);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.service-table td {
+  background-color: rgb(245, 245, 245);
+  color: rgb(50, 50, 50);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.service-table tbody tr:nth-child(even) td {
+  background-color: rgb(235, 235, 235);
+}
+
+/* ===============================
+   Mobile adjustments
+=============================== */
+@media (max-width: 768px) {
+
+    .hero-content h1 {
+    font-size: 7vw;
+  }
+  .hero-content b, .hero-content p {
+    font-size: 5vw;
+  }
+  .service-table {
+    display: block;
+  }
+
+  .service-table thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+  .service-table tbody,
+  .service-table tr {
+    display: block;
+    margin-bottom: 1.5em;
+  }
+
+  .service-table td {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8em;
+    text-align: left;
+    white-space: normal;
+    word-break: normal;
+    box-sizing: border-box;
+  }
+
+  /* Labels above content */
+  .service-table td::before {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+  }
+
+  .service-table td:nth-of-type(1)::before {
+    content: "Service Type";
+  }
+
+  .service-table td:nth-of-type(2)::before {
+    content: "Included Tasks";
+  }
+}

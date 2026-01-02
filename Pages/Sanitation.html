@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industrial Services | MG Multi Services Corp.</title>
+  <link rel="stylesheet" href="../style-sheets/style_sanitation.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+  <a href="index.html" aria-label="Go to homepage" title="MG Multi Services Corp.">
+    <img src="../Images/main_logo.png" alt="MG Multi Services Corp. Logo">
+  </a>
+</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+            <!--Dropdown mennu for different services-->
+<div class="dropdown">
+    <button class="dropbtn">Services ▾</button>
+    <div class="dropdown-content">
+      <a href="../Pages/Index.html#residential">Residential Cleaning</a>
+      <a>Sanitation Services</a>
+    </div>
+  </div>
+      <a href="../Pages/Index.html#about">About Us</a>
+      <a href="../Pages/Index.html#quote">Get a Free Quote</a>
+    </nav>
+  </header>
+  <section class="hero" id="services">
+    <div class="hero-overlay"></div>
+<div class="hero-image"></div>
+
+
+    <div class="hero-content">
+      <h1>Industrial Services</h1>
+     <b>Specialized cleaning and sanitation for industrial environments,</b>
+     <p>tailored to your facility’s needs.</p>
+    </div>
+  </section>
+
+<div class="container">
+<!-- Industrial Cleaning -->
+<div class="section-box" id="industrial">
+  <div class="container-layout">
+
+    <div class="service-text">
+      <h2>Comprehensive Industrial Cleaning</h2>
+      <p>We provide industrial cleaning services tailored to the strict demands of manufacturing plants, warehouses, and production facilities. Our approach prioritizes safety, efficiency, and compliance with industry standards, while remaining flexible to adapt to any facility’s requirements.</p>
+
+      <p><strong>Specialized Expertise:</strong> Our team has extensive experience in carrot and slaughtering facilities, with full awareness of the risks of biohazardous materials. We meet the highest sanitation standards (SSOP, WHMIS, JHSC) and have certified members trained to operate scissor lifts safely.</p>
+
+      <p><strong>Certified Chemicals:</strong> We source sanitation agents from <strong>Sani Marc</strong>, ensuring industry-grade safety and effectiveness.</p>
+
+      <p>We serve a wide range of environments, including:</p>
+      <ul class="facility-types">
+        <li>Food processing plants</li>
+        <li>Slaughterhouses</li>
+        <li>Warehouses & distribution centers</li>
+        <li>Manufacturing facilities</li>
+        <li>Biohazard zones</li>
+      </ul>
+
+      <p><b>Unsure if we cover your facility? Feel free to contact us!</b></p>
+
+      <p><a href="../Pages/Index.html#industrial-quote-btn" class="cta-button">Request Industrial Quote</a></p>
+    </div>
+
+    <div class="image-media">
+      <div class="image-slider">
+        <h2>Click to enlarge image</h2>
+        <div class="slides">
+          <img src="../Images/sanitation3.webp" class="active"/>
+          <img src="../Images/sanitation4.webp" />
+          <video class="slider-video" muted playsinline>
+            <source src="../Videos/fast-video-san1.mp4" type="video/mp4">
+          </video>
+          <img src="../Images/sanitation6.webp" />
+          <img src="../Images/sanitation7.webp" />
+          <img src="../Images/sanitation8.webp" />
+        </div>
+
+        <div class="slider-controls">
+          <button class="prev">&#10094;</button>
+          <div class="slider-dots"></div>
+          <button class="next">&#10095;</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="../Images/main_logo.png" alt="MG Multi Services Corp. Logo" />
+      </div>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/mgmsc" target="_blank" aria-label="Facebook">
+          <img src="../Images/facebook-icon.webp" alt="Facebook" />
+        </a>
+        <div class="footer-contact">
+          <p><strong>📞 Phone:</strong> 403-635-1191</p>
+          <p><strong>📧 Email:</strong> info.mgmsc@gmail.com</p>
+        </div>
+        <a href="https://www.instagram.com/mgmsc2025/" target="_blank" aria-label="Instagram">
+          <img src="../Images/instagram-icon.webp" alt="Instagram" />
+        </a>
+      </div>
+      <p>&copy; 2025 MG Multi Services Corp. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- JS FOR SLIDER -->
+  <script>
+  document.querySelectorAll('.image-slider').forEach((slider) => {
+  const slides = slider.querySelectorAll('.slides img');
+  const prevBtn = slider.querySelector('.prev');
+  const nextBtn = slider.querySelector('.next');
+  const dotsContainer = slider.querySelector('.slider-dots');
+
+  let currentSlide = 0;
+  let autoSlideInterval;
+
+  slides.forEach((img, i) => {
+    img.classList.toggle('active', i === 0);
+  });
+
+  dotsContainer.innerHTML = '';
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.toggle('active', i === 0);
+    dot.addEventListener('click', () => {
+      goToSlide(i);
+      resetAutoSlide();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  function goToSlide(index) {
+    const dots = dotsContainer.querySelectorAll('button');
+
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+
+    currentSlide = index;
+
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+    resetAutoSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    goToSlide((currentSlide + 1) % slides.length);
+    resetAutoSlide();
+  });
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      goToSlide((currentSlide + 1) % slides.length);
+    }, 5000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  startAutoSlide();
+});
+// --- SWIPE SUPPORT FOR MOBILE ---
+document.querySelectorAll('.image-slider').forEach(slider => {
+  const slideArea = slider.querySelector('.slides');
+
+  let startX = 0;
+  let endX = 0;
+  let isSwipe = false;
+
+  slideArea.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    endX = startX;
+    isSwipe = false;
+  });
+
+  slideArea.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+
+    // Only mark as swipe if movement is significant
+    if (Math.abs(endX - startX) > 40) {
+      isSwipe = true;
+    }
+  });
+
+  slideArea.addEventListener('touchend', (e) => {
+    const distance = endX - startX;
+
+    if (isSwipe && Math.abs(distance) > 40) {
+      // Prevent tap from firing
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (distance < 0) {
+        slider.querySelector('.next').click();
+      } else {
+        slider.querySelector('.prev').click();
+      }
+    }
+  });
+});
+</script>
+
+
+
+
+
+  <!-- JS FOR SERVICES DROPDOWN MENU CLOSING ON TOUCH SCREENS -->
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  if (isTouchDevice) {
+    const dropdown = document.querySelector(".dropdown");
+    const dropbtn = dropdown.querySelector(".dropbtn");
+    const links = dropdown.querySelectorAll(".dropdown-content a");
+
+    // Toggle dropdown on button tap
+    dropbtn.addEventListener("click", function (e) {
+      e.preventDefault(); // prevent accidental navigation
+      dropdown.classList.toggle("open");
+    });
+
+    // Close dropdown after clicking a link
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        dropdown.classList.remove("open");
+      });
+    });
+  }
+});
+
+</script>
+<!-- JS FOR ENLARGING IMAGES -->
+ <script>
+// LIGHTBOX.JS
+
+// Select all slider items (images and videos)
+const sliderItems = document.querySelectorAll('.slides img, .slides video');
+
+if (sliderItems.length > 0) {
+  const lightbox = document.createElement('div');
+  lightbox.id = 'lightbox';
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = `<span class="close">&times;</span>`;
+  document.body.appendChild(lightbox);
+
+  const closeBtn = lightbox.querySelector('.close');
+  let pausedSliders = []; // store sliders that were paused
+
+  sliderItems.forEach(item => {
+    item.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+
+      // Pause all sliders on the page
+      pausedSliders = [];
+      document.querySelectorAll('.image-slider').forEach(slider => {
+        if (slider._autoSlideInterval) {
+          clearInterval(slider._autoSlideInterval);
+          pausedSliders.push(slider);
+        }
+      });
+
+      // Remove previous content
+      const oldContent = lightbox.querySelector('.lightbox-img, .lightbox-video');
+      if (oldContent) {
+        if (oldContent.tagName === 'VIDEO') {
+          oldContent.pause();
+          oldContent.currentTime = 0;
+        }
+        oldContent.remove();
+      }
+
+      if (item.tagName === 'VIDEO') {
+        const video = document.createElement('video');
+        video.src = item.currentSrc || item.src;
+        video.controls = true;
+        video.autoplay = true;
+        video.muted = true;
+        video.className = 'lightbox-video';
+        lightbox.appendChild(video);
+      } else {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.alt || '';
+        img.className = 'lightbox-img';
+        lightbox.appendChild(img);
+      }
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+
+    const content = lightbox.querySelector('.lightbox-img, .lightbox-video');
+    if (content) {
+      if (content.tagName === 'VIDEO') {
+        content.pause();
+        content.currentTime = 0;
+      }
+      content.remove();
+    }
+
+    // Resume all paused sliders
+    pausedSliders.forEach(slider => {
+      const event = new Event('resumeSlider');
+      slider.dispatchEvent(event);
+
+      // Immediately advance to next slide after 1 second
+      setTimeout(() => {
+        if (slider._goToSlide) {
+          const slides = slider.querySelectorAll('.slides > *');
+          const currentSlide = Array.from(slides).findIndex(s => s.classList.contains('active'));
+          const nextSlide = (currentSlide + 1) % slides.length;
+          slider._goToSlide(nextSlide); // Use slider's own goToSlide function
+        }
+      }, 1000); // 1 second delay
+    });
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+
+</script>
+</body>
+</html>

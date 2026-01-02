@@ -1,0 +1,818 @@
+:root {
+  --header-offset: 0px; /* will be updated by JS */
+}
+
+html {
+  scroll-padding-top: var(--header-offset);
+  scroll-behavior: smooth;
+}
+
+.section-box,
+.hero,
+#about,
+#residential,
+#services,
+#quote {
+  scroll-margin-top: 20vh; 
+}
+
+body {
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: rgba(235, 235, 235, 0.742);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2vh 5vw;
+  color: white;
+  gap: 8vw;
+  border-bottom: 0.6vh solid white;
+  background-color: rgb(10, 31, 68);
+  width: 100vw;
+}
+
+.logo img {
+  height: 8vh;
+  width: auto;
+  max-height: 12vh;
+}
+
+nav {
+  display: flex;
+  gap: 4vw;
+  margin-right: 5%;
+}
+
+nav a {
+  color: #4ea7ff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  padding: 0.4em;
+  border: 0.15em solid rgba(255, 255, 255);
+  border-radius: 0.5em;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background-color: rgba(230, 230, 230, 0.881);
+  border-color: rgb(227, 7, 7);
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  all: unset; /* remove browser button defaults */
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #4ea7ff;
+  font-size: 1.3rem;
+  padding: 0.4em;
+  border: 0.15em solid rgba(255, 255, 255);
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: rgba(230, 230, 230, 0.881);
+  border-color: rgb(227, 7, 7);
+  color: rgb(10, 31, 68);
+}
+
+/* Hidden by default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(10, 31, 68);
+  min-width: 220px;
+  box-shadow: 0 0.8vh 1.2vh rgba(0,0,0,0.2);
+  border-radius: 0.5em;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: #4ea7ff;
+  padding: 0.8em 1em;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(230, 230, 230, 0.881);
+  color: rgb(10, 31, 68);
+}
+
+/* Desktop hover */
+@media (hover: hover) and (pointer: fine) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../Images/index-hero.webp");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.505);
+  background-position: center;
+}
+
+.hero-content {
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  max-width: 90vw;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+}
+.hero-content b {
+  font-weight: normal;
+  font-size: 2vw;
+  color: white;
+}
+
+.hero-content p {
+  font-size: 2vw;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section Boxes */
+.section-box {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  margin-bottom: 10%;
+  max-width: 1200px;
+  width: 90%;
+  background-color: rgba(105, 169, 243, 0.126);
+  border-radius: 1.2em;
+  padding: 5vh 4vw;
+  box-shadow: 0 0.8vh 1.2vh rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-box:hover {
+  transform: translateY(-0.5vh);
+  box-shadow: 0 1.2vh 1.8vh rgba(0, 0, 0, 0.15);
+}
+
+.section-box h2 {
+  color: rgb(10, 31, 68);
+  font-size: 2rem;
+  margin-bottom: 1vh;
+}
+
+.section-box p,
+.section-box li {
+  color: rgb(60, 60, 60);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Generic container layout for images + text */
+.container-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4vw;
+  flex-wrap: wrap;
+}
+
+.container-layout .image-media {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-layout .service-text {
+  flex: 1 1 45%;
+}
+
+/* Image Slider */
+.image-slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  background: #f8f8f8;
+  border-radius: 2rem;
+  margin: auto;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  background: #f8f8f8;
+  margin-top: 2.5vh;
+}
+
+.slides img, .slides video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  display: none;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.slides img.active, .slides video.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Controls */
+.slider-controls {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6vw;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.slider-controls button {
+  background: none;
+  border-radius: 80%;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333;
+  line-height: 1;
+}
+
+.slider-controls button:hover {
+  color: rgb(10, 81, 181);
+}
+
+/* Slider dots */
+.slider-dots {
+  display: flex;
+  gap: 0.9em;
+}
+
+.slider-dots button {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 100%;
+  border: none;
+  background: #ccccccfe;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-dots button.active {
+  background: rgb(10, 31, 68);
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img,
+.lightbox-video {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 0.5em;
+  transition: transform 0.3s ease;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.image-media h2 {
+  font-size: 0.8rem;
+  position: relative;
+  text-align: center;
+}
+
+/* Forms */
+/* ===========================
+   FORM UI — OVERRIDES GLOBAL RULES SAFELY - this area interferes with the buttons and arrows in the image slider!!!!!!!!!!!!!!!!!
+=========================== */
+#quote .quote-selection {
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* keeps them aligned */
+  gap: 1rem;                 /* spacing between buttons */
+  margin: 0 auto 2rem auto;  /* centers the whole group */
+  width: fit-content;        /* prevents stretching */
+}
+#quote input,
+#quote textarea {
+  all: revert; /* cancels your global all:unset */
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #4ea7ff;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: rgba(235, 235, 235, 0.742);
+  margin: 0.4rem 0;
+  display: block;
+}
+#quote input,
+#quote textarea {
+  font-family: inherit;   /* match the page font */
+  font-size: 1rem;        /* match input size */
+  line-height: 1.4;       /* keeps textarea text clean */
+}
+#quote input:focus,
+#quote textarea:focus {
+  outline: none;
+  border-color: rgb(10, 31, 68);
+  background: white;
+}
+
+/* Labels */
+#quote label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  color: rgb(10, 31, 68);
+  margin-bottom: 0.2rem;
+}
+
+/* Quote selection buttons */
+#quote .quote-selection button {
+  all: revert; /* removes global button styling */
+  background: rgb(10, 31, 68);
+  color: #4ea7ff;
+  border: 2px solid #4ea7ff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 0;
+}
+
+#quote .quote-selection button:hover {
+  background: #4ea7ff;
+  color: rgb(10, 31, 68);
+}
+
+
+#quote button[type="submit"] {
+  all: revert; 
+  background: rgb(10, 31, 68);
+  color: #4ea7ff;
+  border: 2px solid #4ea7ff;
+  padding: 0.9rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+#quote button[type="submit"]:hover {
+  background: #4ea7ff;
+  color: rgb(10, 31, 68);
+}
+
+/* Layout */
+#quote form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.section-box#quote {
+  max-width: 60%;
+}
+
+.section-box h2, p {
+  text-align: center;
+}
+
+input,
+textarea,
+button {
+  all: unset; 
+  background-color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+  padding: 1em;
+  border-radius: 0.6em;
+  border: 1px solid #ccc;
+  width: 60%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+button {
+  text-align: center;
+  margin-top: 5%;
+  background-color: rgb(26, 102, 204);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(4, 47, 116);
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* CTA buttons */
+.cta-button {
+  display: inline-block;
+  margin-top: 4vh;
+  padding: 1em 2em;
+  background-color: rgb(10, 31, 68);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  color: rgb(10, 81, 181);
+  transform: translateY(-5px);
+  transition: transform 0.4s ease;
+}
+
+/* About Us layout */
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3vw;
+  flex-wrap: nowrap;
+}
+
+#about .about-text {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#about .image-media {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  position: relative;
+  left: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(10, 31, 68);
+  color: white;
+  padding: 3vh 5vw;
+  text-align: center;
+  border-top: 0.4vh solid white;
+}
+
+.footer-content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vh;
+}
+
+.footer-logo img {
+  height: 8vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-links img {
+  height: 4rem;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footer-links img:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.footer-contact p {
+  margin: 0.5em 0;
+  font-size: 1.15rem;
+}
+/* ===========================
+   MEDIA QUERIES
+=========================== */
+
+/* Tablet + Mobile (≤1024px) */
+@media (max-width: 1024px) {
+
+  /* Header stacked + centered */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* FIX */
+    gap: 2vh;                /* FIX: override 8vw */
+    padding: 2vh 2vw;
+  }
+
+  /* Logo centered */
+  .logo {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .logo img {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Nav centered under logo */
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4vw;
+    margin-top: 1rem;
+    margin-right: 0;  
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 0.5em 1em;
+  }
+
+  .dropbtn {
+    font-size: 1rem;
+  }
+
+  /* Hero adjustments */
+  .hero-content {
+    top: 28vh;
+    color: rgb(255, 255, 255);
+    white-space: normal;
+    z-index: 1;
+  }
+
+  .hero-content h1 {
+    font-size: 6.4vw;
+    margin-bottom: 2vh;
+  }
+
+  .hero-content b {
+    font-weight: normal;
+    font-size: 4.25vw;
+  }
+
+  .hero-content p {
+    font-size: 4.25vw;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+
+
+  /* Image sliders */
+  
+  .slider-controls button {
+    font-size: 1rem;
+  }
+
+  .slider-dots button {
+    width: 0.3em;
+    height: 0.3em;
+  }
+
+  /* Footer adjustments */
+  .footer-links {
+    gap: 0.6rem;
+    justify-content: center;
+  }
+
+  .footer-links img {
+    width: 2.2rem;
+    height: 2.2rem;
+    object-fit: contain;
+    margin: 0;
+  }
+
+  /* Form section-box width */
+  .section-box#quote {
+    max-width: 70%;
+  }
+
+  input,
+  textarea,
+  button {
+    width: 80%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  /* Tablet: container layout side-by-side like laptop */
+  .container-layout {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .container-layout .image-media {
+    width: 45%;
+    max-width: 400px;
+  }
+
+  .container-layout .service-text {
+    width: 50%;
+  }
+}
+
+/* Mobile only (≤768px) */
+@media (max-width: 768px) {
+
+  /* Smaller logo on phone */
+  .logo img {
+    max-width: 140px; /* smaller than tablet */
+    height: auto;
+  }
+
+  /* Stack container-layout sections */
+  .container-layout {
+    flex-direction: column;
+    text-align: center;
+    gap: 4vh;
+  }
+
+  .container-layout .service-text {
+    order: 0 !important;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .container-layout .image-media {
+    order: 1;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* About us stacking */
+  #about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4vh;
+  }
+
+  #about .about-text {
+    flex: 1 1 100%;
+    width: 90%;
+    align-items: center;
+  }
+
+  #about .image-media {
+    flex: 1 1 100%;
+    width: 90%;
+  }
+
+  #about .about-text h2 {
+    font-size: 1.6rem;
+  }
+
+  #about .about-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .service-text ul, li {
+   all: unset;
+  font-weight: bold;
+  display: block;
+
+  }
+  /* Services stacking */
+  #residential .service-content,
+  #sanitation .service-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4vh;
+  }
+
+  /* Sanitation layout inverse removed */
+  #services .container-layout {
+    flex-direction: column;
+  }
+
+  .sanitation-layout .service-media {
+    margin-top: 2rem;
+  }
+  /* Form section-box width */
+   #quote input,
+  #quote textarea {
+    width: 100%;
+    max-width: 100%;    
+    box-sizing: border-box;
+  }
+
+  #quote button[type="submit"] {
+    width: 100%;        
+  }
+
+  #quote .quote-selection button {
+    width: 100%;        
+  }
+
+}

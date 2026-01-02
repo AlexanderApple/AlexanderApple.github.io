@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Residential Services | MG Multi Services Corp.</title>
+  <link rel="stylesheet" href="../style-sheets/style_residential.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+  <a href="index.html" aria-label="Go to homepage" title="MG Multi Services Corp.">
+    <img src="../Images/main_logo.png" alt="MG Multi Services Corp. Logo">
+  </a>
+</div>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+           <!--Dropdown mennu for different services-->
+<div class="dropdown">
+    <button class="dropbtn">Services ▾</button>
+    <div class="dropdown-content">
+      <a>Residential Cleaning</a>
+      <a href="../Pages/Index.html#services">Sanitation Services</a>
+    </div>
+  </div>
+      <a href="../Pages/Index.html#about">About Us</a>
+      <a href="../Pages/Index.html#quote">Get a Free Quote</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="services">
+    <div class="hero-overlay"></div>
+<div class="hero-image"></div>
+    <div class = "hero-content">
+      <h1>Residential Services</h1>
+      <b>Happy to maintain the cleanliness of your home,</b>
+      <p>fresh and long lasting!</p>
+    </div>
+  </section>
+
+  <div class="container">
+
+<!-- Comprehensive Residential Cleaning -->
+<div class="section-box">
+  <div class="container-layout">
+    <div class="service-text">
+      <h2>Comprehensive Residential Cleaning</h2>
+      <p>We are here to offer services for every occasion. Whether you're moving into a new home, hosting events, or just need help with cleaning. Regardless of the situation, we got you covered!</p>
+
+      <h2>Cleaning Service Options</h2>
+      <p>Choose the level of service that best fits your needs. Each option is customizable and can be tailored to your space and schedule, so give us a call today!</p>
+
+      <div class="service-table-wrapper">
+        <table class="service-table">
+          <thead>
+            <tr>
+              <th>Service Type</th>
+              <th>Included Tasks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Service Type">Standard Cleaning</td>
+              <td data-label="Included Tasks">Dusting, vacuuming, mopping, kitchen cleaning, bathroom cleaning, and overall room cleaning</td>
+            </tr>
+            <tr>
+              <td data-label="Service Type">Deep Cleaning</td>
+              <td data-label="Included Tasks">All standard tasks plus appliance interiors, baseboards, blinds, detailed sanitation</td>
+            </tr>
+            <tr>
+              <td data-label="Service Type">Recurring Cleaning</td>
+              <td data-label="Included Tasks">Weekly, bi-weekly, or monthly cleaning with flexible scheduling</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><a href="../Pages/Index.html#residential-quote-btn" class="cta-button">Request Residential Quote</a></p>
+    </div>
+
+    <div class="image-media">
+      <div class="image-slider">
+        <h2>Click to enlarge image</h2>
+        <div class="slides">
+          <img src="../Images/residential3.webp" alt="Factory Floor Cleaning" class="active">
+          <img src="../Images/residential4.webp" alt="Heavy Equipment Sanitation">
+          <img src="../Images/residential5.webp" alt="Industrial Cleaning Team at Work">
+        </div>
+
+        <div class="slider-controls">
+          <button class="prev">&#10094;</button>
+          <div class="slider-dots"></div>
+          <button class="next">&#10095;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pet-Friendly Cleaning -->
+<div class="section-box" id="residential">
+  <div class="container-layout">
+    <div class="service-text">
+      <h2>Pet-Friendly Cleaning</h2>
+
+      <p>
+        We understand that pets are part of the family. Our team is trained to work safely around our furry friends, ensuring a thorough sanitation without compromising their well-being.
+      </p>
+
+      <ul>
+        <li>Pet-safe cleaning practices</li>
+        <li>Attention to pet hair and mess</li>
+        <li>Care around food bowls, toys, and bedding</li>
+        <li>Flexible arrangements for anxious or special needs pets</li>
+      </ul>
+
+      <p>
+        Let us know ahead of time about any pets in the home so we can prepare accordingly to ensure a seamless and stress-free experience for both you and your pets.
+      </p>
+    </div>
+
+    <div class="image-media">
+      <div class="image-slider">
+        <h2>Click to enlarge image</h2>
+        <div class="slides">
+          <img src="../Images/pet.webp" class="active">
+          <img src="../Images/pet1.webp">
+          <img src="../Images/pet2.webp">
+          <img src="../Images/pet3.webp">
+        </div>
+
+        <div class="slider-controls">
+          <button class="prev">&#10094;</button>
+          <div class="slider-dots"></div>
+          <button class="next">&#10095;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="../Images/main_logo.png" alt="MG Multi Services Corp. Logo">
+      </div>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/mgmsc" target="_blank" aria-label="Facebook">
+          <img src="../Images/facebook-icon.webp" alt="Facebook">
+        </a>
+        <div class="footer-contact">
+          <p><strong>📞 Phone:</strong> 403-635-1191</p>
+          <p><strong>📧 Email:</strong> info.mgmsc@gmail.com</p>
+        </div>
+        <a href="https://www.instagram.com/mgmsc2025/" target="_blank" aria-label="Instagram">
+          <img src="../Images/instagram-icon.webp" alt="Instagram">
+        </a>
+      </div>
+      <p>&copy; 2025 MG Multi Services Corp. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS FOR SLIDER -->
+  <script>
+  document.querySelectorAll('.image-slider').forEach((slider) => {
+  const slides = slider.querySelectorAll('.slides img');
+  const prevBtn = slider.querySelector('.prev');
+  const nextBtn = slider.querySelector('.next');
+  const dotsContainer = slider.querySelector('.slider-dots');
+
+  let currentSlide = 0;
+  let autoSlideInterval;
+
+  slides.forEach((img, i) => {
+    img.classList.toggle('active', i === 0);
+  });
+
+  dotsContainer.innerHTML = '';
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.toggle('active', i === 0);
+    dot.addEventListener('click', () => {
+      goToSlide(i);
+      resetAutoSlide();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  function goToSlide(index) {
+    const dots = dotsContainer.querySelectorAll('button');
+
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+
+    currentSlide = index;
+
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+    resetAutoSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    goToSlide((currentSlide + 1) % slides.length);
+    resetAutoSlide();
+  });
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      goToSlide((currentSlide + 1) % slides.length);
+    }, 5000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  startAutoSlide();
+});
+// --- SWIPE SUPPORT FOR MOBILE ---
+document.querySelectorAll('.image-slider').forEach(slider => {
+  const slideArea = slider.querySelector('.slides');
+
+  let startX = 0;
+  let endX = 0;
+  let isSwipe = false;
+
+  slideArea.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    endX = startX;
+    isSwipe = false;
+  });
+
+  slideArea.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+
+    // Only mark as swipe if movement is significant
+    if (Math.abs(endX - startX) > 40) {
+      isSwipe = true;
+    }
+  });
+
+  slideArea.addEventListener('touchend', (e) => {
+    const distance = endX - startX;
+
+    if (isSwipe && Math.abs(distance) > 40) {
+      // Prevent tap from firing
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (distance < 0) {
+        slider.querySelector('.next').click();
+      } else {
+        slider.querySelector('.prev').click();
+      }
+    }
+  });
+});
+</script>
+ <!-- JS FOR SERVICES DROPDOWN MENU CLOSING ON TOUCH SCREENS -->
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  if (isTouchDevice) {
+    const dropdown = document.querySelector(".dropdown");
+    const dropbtn = dropdown.querySelector(".dropbtn");
+    const links = dropdown.querySelectorAll(".dropdown-content a");
+
+    // Toggle dropdown on button tap
+    dropbtn.addEventListener("click", function (e) {
+      e.preventDefault(); // prevent accidental navigation
+      dropdown.classList.toggle("open");
+    });
+
+    // Close dropdown after clicking a link
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        dropdown.classList.remove("open");
+      });
+    });
+  }
+});
+</script>
+<!-- JS FOR ENLARGING IMAGES -->
+ <script>
+ // Select all slider images on the page
+const sliderImages = document.querySelectorAll('.slides img');
+
+if (sliderImages.length > 0) {
+  // Create lightbox container dynamically
+  const lightbox = document.createElement('div');
+  lightbox.id = 'lightbox';
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = `
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="Enlarged Image">
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector('.lightbox-img');
+  const closeBtn = lightbox.querySelector('.close');
+
+  // Click image to open lightbox
+  sliderImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    });
+  });
+
+  // Click close button
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  // Click outside image
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
+

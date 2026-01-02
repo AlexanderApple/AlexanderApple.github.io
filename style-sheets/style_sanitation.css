@@ -1,0 +1,50 @@
+/* ===============================
+   Import index styles
+=============================== */
+@import url("../style-sheets/style_index.css");
+
+/* Facility Types List */
+.facility-types {
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  padding-left: 1.5em;
+  color: rgb(60, 60, 60);
+  line-height: 1.6;
+}
+
+
+.cta-button:hover {
+  background-color: rgb(34, 98, 202);
+}
+
+.hero-image {
+
+  background-image: url("../Images/sanitation-hero.webp");
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-text ul{
+    text-align: center;
+  }
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8em 1.5em;
+  }
+  .facility-types {
+    padding-left: 1em;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-size: 7vw;
+  }
+  .hero-content b, .hero-content p {
+    font-size: 5vw;
+  }
+ 
+ .facility-types li{
+    list-style-type: none;
+  }
+
+}
